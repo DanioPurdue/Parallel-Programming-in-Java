@@ -61,3 +61,12 @@ this can be a metric for measuring parallelism.
 `T_p = Execution time in p processor`
 
 ![image-20190613234227570](/Users/daniowang/OneDrive/GitHub/Parallel-Programming-in-Java/w1_speedup.png)
+
+## Tutorial on fork and join framework
+
+https://www.baeldung.com/java-fork-join
+
+
+
+## Degree of parallelism for the fork join frame work
+
