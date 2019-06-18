@@ -105,8 +105,8 @@ public final class StudentAnalytics {
     public String mostCommonFirstNameOfInactiveStudentsParallelStream(
             final Student[] studentArray) {
         Map.Entry<String, Long> most_common_name = Stream.of(studentArray).parallel()
-                .filter(s -> !s.checkIsCurrent())
-                .collect(Collectors.groupingBy(Student::getFirstName, Collectors.counting()))
+                .filter(s -> !s.checkIsCurrent()).map(Student::getFirstName)
+                .collect(Collectors.groupingBy(n -> n, Collectors.counting()))
                 .entrySet().stream().parallel()
                 .max(Comparator.comparing(e -> e.getValue())).get();
         return most_common_name.getKey();
